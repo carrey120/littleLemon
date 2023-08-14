@@ -1,0 +1,43 @@
+.container {
+  width: 940px;
+}
+
+.app__navbar {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+
+}
+
+.app__navbar-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  img {
+    width: 160px;
+    height: 40px;
+  }
+}
+
+.app__navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  list-style: none;
+    a {
+      color: #000000;
+      font-family: "karla";
+      text-decoration: none;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.1s ease-in-out;
+      margin:auto 10px;
+
+      &:hover {
+        color: #F4CE14;
+      }
+    }
+}
