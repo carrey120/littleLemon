@@ -35,6 +35,7 @@ function App() {
           <Route path="/order" element={<Order />} />
           <Route path="/login" element={<Login />} />
         </Routes>
+
         <Footer />
 
       </div>
