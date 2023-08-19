@@ -1,6 +1,7 @@
 import React from 'react'
 import "../Form/Form.scss"
 import { useState } from 'react';
+import { render, fireEvent } from '@testing-library/react';
 
 const Form = () => {
   const [selectedDate, setSelectedDate] = useState('');
@@ -24,30 +25,33 @@ const Form = () => {
   const handleOccasionChange = (event) => {
     setSelectedOccasion(event.target.value);
   };
+
+
   return (
     <div>
-      <form className='form'>
-        <label for="res-date">Choose date</label>
-        <input type="date" id="res-date" value={selectedDate} onChange={handleDateChange}></input>
+      <form className='form'  >
+        <label htmlFor="res-date">Choose date</label>
+        <input type="date" id="res-date" value={selectedDate} onChange={handleDateChange} required></input>
 
-        <label for="res-time">Choose time</label>
-        <select id="res-time " value={selectedTime} onChange={handleTimeChange}>
+        <label htmlFor="res-time">Choose time</label>
+        <select id="res-time " value={selectedTime} onChange={handleTimeChange} required>
         {availableTimes.map((time) => (
           <option key={time}>{time}</option>
         ))}
 
         </select>
-        <label for="guests">Number of guests</label>
-        <input type="number" placeholder="1" min="1" max="10" id="guests"></input>
-        <label for="occasion">Occasion</label>
-        <select id="occasion">
+        <label htmlFor="guests">Number of guests</label>
+        <input type="number" placeholder="1" min="1" max="10" id="guests" value={numOfGuests} onChange={handleGuestsChange} required></input>
+        <label htmlFor="occasion">Occasion</label>
+        <select id="occasion" value={selectedOccasion} onChange={handleOccasionChange} required>
             <option>Birthday</option>
             <option>Anniversary</option>
         </select>
-        <input type="submit" value="Make Your reservation"></input>
+        <input type="submit" value="Make Your reservation" ></input>
       </form>
     </div>
   )
 }
+
 
 export default Form

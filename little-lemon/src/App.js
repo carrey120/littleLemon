@@ -1,5 +1,4 @@
 import './App.scss';
-import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 import About from './pages/About/About'
 import Menu from './pages/Menu/Menu'
